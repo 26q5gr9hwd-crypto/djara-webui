@@ -1,5 +1,5 @@
-/* djara.css — Greek personality overlay for Джара (DJARA-3 v3b)
-   Loaded after style.css; uses !important sparingly to win cascade. */
+/* djara.css — Greek personality overlay for Джара (DJARA-3 v3c)
+   Loaded after style.css. */
 
 :root {
   --djara-marble: #FBF7F0;
@@ -15,7 +15,7 @@
   --djara-shadow-md: 0 2px 8px rgba(13,59,102,0.06), 0 12px 28px rgba(13,59,102,0.05);
 }
 
-/* ---------- Tabs: hide the technical ones, keep Chat + Tasks(Calendar) + Settings ---------- */
+/* Tabs: keep Chat + Tasks(Calendar) + Help + Settings */
 .rail-btn[data-panel="skills"],
 .rail-btn[data-panel="memory"],
 .rail-btn[data-panel="workspaces"],
@@ -25,221 +25,199 @@
 .nav-tab[data-panel="memory"],
 .nav-tab[data-panel="workspaces"],
 .nav-tab[data-panel="profiles"],
-.nav-tab[data-panel="todos"] {
-  display: none !important;
-}
-.rail-btn[data-panel="tasks"],
-.nav-tab[data-panel="tasks"] { display: inline-flex !important; }
+.nav-tab[data-panel="todos"] { display: none !important; }
+.rail-btn[data-panel="tasks"], .nav-tab[data-panel="tasks"],
+.rail-btn[data-panel="help"],  .nav-tab[data-panel="help"] { display: inline-flex !important; }
 
-/* ---------- Telemetry: hide tps chip ---------- */
+/* Telemetry off */
 #tps-chip, .tps-chip, .topbar-tps, [data-chip="tps"] { display: none !important; }
 
-/* ---------- Topbar title ("Чат") — Inter, smaller, single accent color ---------- */
-.titlebar-title,
-.topbar-title,
-.titlebar h1,
-.topbar h1,
-.panel-title,
-#topbarTitle,
-.app-title {
+/* Composer chips: hide profile / workspace / model. Keep attach + mic + send. */
+#profileChipWrap, .composer-profile-wrap, .composer-profile-chip,
+#composerWorkspaceGroup, .composer-workspace-group, .ws-chip,
+.composer-workspace-files-btn, .composer-workspace-chip,
+.composer-model-wrap, .composer-model-chip, .composer-model-select { display: none !important; }
+
+/* Topbar title */
+.titlebar-title, .topbar-title, .titlebar h1, .topbar h1, .panel-title, #topbarTitle, .app-title {
   font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.02em !important;
-  text-transform: none !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-          background-clip: initial !important;
-  -webkit-text-fill-color: var(--djara-aegean) !important;
-  color: var(--djara-aegean) !important;
+  font-size: 13px !important; font-weight: 600 !important;
+  letter-spacing: 0.02em !important; text-transform: none !important;
+  background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important;
+  -webkit-text-fill-color: var(--djara-aegean) !important; color: var(--djara-aegean) !important;
 }
 
-/* ---------- Empty-state hero — simpler, smaller, calmer ---------- */
-.empty-state {
-  padding: 32px 16px !important;
+/* Hero */
+.empty-state { padding: 32px 16px !important; }
+.empty-state .empty-icon, .empty-state .hero-mark, .empty-state .empty-mark {
+  width: 48px !important; height: 48px !important; margin-bottom: 16px !important;
 }
-.empty-state .empty-icon,
-.empty-state .hero-mark,
-.empty-state .empty-mark {
-  width: 48px !important;
-  height: 48px !important;
-  margin-bottom: 16px !important;
-}
-.empty-state .empty-title,
-.empty-state h1,
-.empty-state h2 {
+.empty-state .empty-title, .empty-state h1, .empty-state h2 {
   font-family: 'Inter', system-ui, sans-serif !important;
-  font-size: 30px !important;
-  font-weight: 600 !important;
-  letter-spacing: -0.01em !important;
-  line-height: 1.2 !important;
-  background: none !important;
-  -webkit-background-clip: initial !important;
-          background-clip: initial !important;
-  -webkit-text-fill-color: var(--djara-aegean-deep) !important;
-  color: var(--djara-aegean-deep) !important;
+  font-size: 30px !important; font-weight: 600 !important;
+  letter-spacing: -0.01em !important; line-height: 1.2 !important;
+  background: none !important; -webkit-background-clip: initial !important; background-clip: initial !important;
+  -webkit-text-fill-color: var(--djara-aegean-deep) !important; color: var(--djara-aegean-deep) !important;
   margin-bottom: 6px !important;
 }
-.empty-state .empty-subtitle,
-.empty-state .empty-state-subtitle,
-.empty-state p {
+.empty-state .empty-subtitle, .empty-state .empty-state-subtitle, .empty-state p {
   font-family: 'Inter', system-ui, sans-serif !important;
-  font-size: 14px !important;
-  font-weight: 400 !important;
-  color: var(--djara-ink-soft) !important;
-  margin-bottom: 24px !important;
+  font-size: 14px !important; font-weight: 400 !important;
+  color: var(--djara-ink-soft) !important; margin-bottom: 24px !important;
 }
 
-/* ---------- Suggestion cards: clean, single border ---------- */
-.empty-state .suggestion,
-.empty-state .suggestion-card,
-.empty-state [data-suggestion],
-.suggestion {
-  background: #fff !important;
-  border: 1px solid rgba(13,59,102,0.10) !important;
-  border-radius: 12px !important;
-  box-shadow: var(--djara-shadow-sm) !important;
-  color: var(--djara-ink) !important;
-  font-family: 'Inter', system-ui, sans-serif !important;
-  font-size: 13px !important;
-  font-weight: 500 !important;
-  padding: 12px 14px !important;
+/* Suggestion cards */
+.empty-state .suggestion, .empty-state .suggestion-card, .suggestion {
+  background: #fff !important; border: 1px solid rgba(13,59,102,0.10) !important;
+  border-radius: 12px !important; box-shadow: var(--djara-shadow-sm) !important;
+  color: var(--djara-ink) !important; font-family: 'Inter', system-ui, sans-serif !important;
+  font-size: 13px !important; font-weight: 500 !important; padding: 12px 14px !important;
   transition: border-color .15s ease, box-shadow .15s ease, transform .15s ease;
 }
-.empty-state .suggestion:hover,
-.suggestion:hover {
+.empty-state .suggestion:hover, .suggestion:hover {
   border-color: var(--djara-aegean-soft) !important;
   box-shadow: 0 2px 8px rgba(31,78,121,0.10) !important;
 }
 
-/* ---------- Composer: larger, softer shadow, simpler ---------- */
-.composer-flyout,
-.composer-wrap,
-.composer-container {
-  max-width: 820px !important;
-  width: calc(100% - 32px) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-shadow: var(--djara-shadow-md) !important;
-  border-radius: 18px !important;
-  background: #fff !important;
-  border: 1px solid rgba(13,59,102,0.08) !important;
+/* Composer */
+.composer-flyout, .composer-wrap, .composer-container {
+  max-width: 820px !important; width: calc(100% - 32px) !important;
+  margin-left: auto !important; margin-right: auto !important;
+  box-shadow: var(--djara-shadow-md) !important; border-radius: 18px !important;
+  background: #fff !important; border: 1px solid rgba(13,59,102,0.08) !important;
 }
-.composer-pill,
-.composer-box,
-.composer-inner {
-  min-height: 72px !important;
-  padding: 10px 14px !important;
-  border-radius: 16px !important;
-  background: transparent !important;
-  box-shadow: none !important;
-  border: none !important;
+.composer-pill, .composer-box, .composer-inner {
+  min-height: 72px !important; padding: 10px 14px !important;
+  border-radius: 16px !important; background: transparent !important;
+  box-shadow: none !important; border: none !important;
 }
-.composer-input,
-#composerInput,
-textarea[name="composer"],
-.composer-input textarea {
-  min-height: 48px !important;
-  font-size: 15px !important;
-  line-height: 1.5 !important;
-  font-family: 'Inter', system-ui, sans-serif !important;
-  color: var(--djara-ink) !important;
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  outline: none !important;
+.composer-input, #composerInput, #msg, textarea[name="composer"], .composer-input textarea {
+  min-height: 48px !important; font-size: 15px !important; line-height: 1.5 !important;
+  font-family: 'Inter', system-ui, sans-serif !important; color: var(--djara-ink) !important;
+  background: transparent !important; border: none !important; box-shadow: none !important; outline: none !important;
 }
-.composer-input::placeholder,
-#composerInput::placeholder,
-textarea[name="composer"]::placeholder {
-  color: var(--djara-ink-soft) !important;
-  opacity: 0.7 !important;
+.composer-input::placeholder, #composerInput::placeholder, #msg::placeholder, textarea[name="composer"]::placeholder {
+  color: var(--djara-ink-soft) !important; opacity: 0.7 !important;
 }
 
-/* ---------- Hide composer chips (model, thinking, ctx, profile, workspace) ---------- */
-.composer-chip,
-.chip-model, .chip-thinking, .chip-context, .chip-profile, .chip-workspace,
-[data-chip="model"], [data-chip="thinking"], [data-chip="context"],
-[data-chip="profile"], [data-chip="workspace"],
-.composer-meta-chip,
-.composer-pill .pill-chip {
-  display: none !important;
-}
-
-/* ---------- Settings panel: simpler typography ---------- */
-.settings-pane,
-.settings-section-title,
-.settings-section-meta,
-.settings-tab,
-.settings-nav-item,
-.settings-heading-title,
-.settings-heading-subtitle {
+/* Settings typography */
+.settings-pane, .settings-section-title, .settings-section-meta, .settings-tab,
+.settings-nav-item, .settings-heading-title, .settings-heading-subtitle,
+#settingsMenu .side-menu-item span {
   font-family: 'Inter', system-ui, sans-serif !important;
 }
 
 /* ============================================================
-   DARK MODE — keep marble feeling without blinding white surfaces
+   HELP / WIKI panel (Помощь)
+   ============================================================ */
+main.main > #mainHelp { display: none; }
+main.main.showing-help > #mainChat { display: none !important; }
+main.main.showing-help > #mainHelp { display: flex !important; flex: 1; flex-direction: column; overflow: hidden; }
+main.main.showing-help .composer-flyout,
+main.main.showing-help .composer-wrap,
+main.main.showing-help #composerWrap { display: none !important; }
+
+.help-wrap { max-width: 820px; margin: 0 auto; padding: 32px 24px 80px; overflow-y: auto; height: 100%; box-sizing: border-box; width: 100%; font-family: 'Inter', system-ui, sans-serif; line-height: 1.6; color: var(--djara-ink); }
+.help-wrap h1 { font-size: 32px; font-weight: 700; color: var(--djara-aegean-deep); margin: 0 0 4px; letter-spacing: -0.01em; }
+.help-wrap .help-lead { font-size: 16px; color: var(--djara-ink-soft); margin: 0 0 32px; }
+.help-wrap h2 { font-size: 22px; font-weight: 600; color: var(--djara-aegean-deep); margin: 40px 0 12px; padding-top: 8px; border-top: 1px solid rgba(13,59,102,0.08); }
+.help-wrap h2:first-of-type { border-top: none; padding-top: 0; }
+.help-wrap h3 { font-size: 16px; font-weight: 600; color: var(--djara-ink); margin: 20px 0 8px; }
+.help-wrap p { margin: 0 0 12px; font-size: 15px; }
+.help-wrap ul, .help-wrap ol { margin: 0 0 16px; padding-left: 22px; font-size: 15px; }
+.help-wrap li { margin-bottom: 6px; }
+.help-wrap strong { font-weight: 600; color: var(--djara-aegean-deep); }
+.help-wrap .help-card { background: #FBF7F0; border: 1px solid rgba(212,150,28,0.18); border-left: 3px solid var(--djara-gold); border-radius: 10px; padding: 14px 16px; margin: 14px 0 18px; font-size: 14px; color: var(--djara-ink); }
+.help-wrap .help-card strong { color: var(--djara-gold); }
+.help-wrap .help-example { background: rgba(31,78,121,0.05); border-left: 3px solid var(--djara-aegean); border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 14px; color: var(--djara-ink); font-style: italic; }
+.help-wrap kbd { display: inline-block; padding: 1px 6px; background: rgba(13,59,102,0.08); border: 1px solid rgba(13,59,102,0.12); border-radius: 4px; font-size: 12px; font-family: 'Inter', system-ui, sans-serif; color: var(--djara-ink); }
+#panelHelp .side-help-toc { padding: 12px 8px; }
+#panelHelp .side-help-toc a { display: block; padding: 8px 12px; font-size: 13px; color: var(--djara-ink-soft); text-decoration: none; border-radius: 8px; margin-bottom: 2px; }
+#panelHelp .side-help-toc a:hover { background: rgba(31,78,121,0.06); color: var(--djara-aegean-deep); }
+#panelHelp .side-help-toc-title { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--djara-ink-soft); padding: 8px 12px 4px; }
+
+/* ============================================================
+   DARK MODE — pure black aesthetic
    ============================================================ */
 .dark, html.dark, body.dark {
-  --djara-marble: #0E1A26;
-  --djara-marble-2: #142231;
-  --djara-ink: #DCE7F4;
-  --djara-ink-soft: #8FA3BB;
+  --djara-marble: #050505;
+  --djara-marble-2: #0A0A0A;
+  --djara-ink: #ECECEC;
+  --djara-ink-soft: #8A8A8A;
+  --bg: #050505 !important;
+  --bg-2: #0A0A0A !important;
+  --sidebar: #0A0A0A !important;
+  --panel: #0A0A0A !important;
+  --code-bg: #141414 !important;
+  --border: #1F1F1F !important;
+  --border2: #1F1F1F !important;
+  --text: #ECECEC !important;
+  --muted: #8A8A8A !important;
 }
-.dark .titlebar-title,
-.dark .topbar-title,
-.dark .panel-title,
-.dark #topbarTitle {
-  -webkit-text-fill-color: var(--djara-aegean-soft) !important;
-  color: var(--djara-aegean-soft) !important;
+.dark body, .dark .layout, .dark main.main { background: #050505 !important; color: #ECECEC !important; }
+.dark .rail, .dark .sidebar, .dark .left-rail, .dark .panel-view, .dark .side-menu,
+.dark #panelChat, .dark #panelTasks, .dark #panelSettings, .dark #panelHelp { background: #0A0A0A !important; border-color: #1F1F1F !important; }
+.dark .titlebar, .dark .topbar, .dark header { background: #0A0A0A !important; border-color: #1F1F1F !important; color: #ECECEC !important; }
+.dark .titlebar-title, .dark .topbar-title, .dark .panel-title, .dark #topbarTitle {
+  -webkit-text-fill-color: var(--djara-aegean-soft) !important; color: var(--djara-aegean-soft) !important;
 }
-.dark .empty-state .empty-title,
-.dark .empty-state h1,
-.dark .empty-state h2 {
-  -webkit-text-fill-color: #DCE7F4 !important;
-  color: #DCE7F4 !important;
+.dark .empty-state .empty-title, .dark .empty-state h1, .dark .empty-state h2 {
+  -webkit-text-fill-color: #FFFFFF !important; color: #FFFFFF !important;
 }
-.dark .empty-state .empty-subtitle,
-.dark .empty-state p {
-  color: #8FA3BB !important;
+.dark .empty-state .empty-subtitle, .dark .empty-state p { color: #9AA0A6 !important; }
+.dark .empty-state .suggestion, .dark .suggestion {
+  background: #141414 !important; border: 1px solid #2A2A2A !important;
+  color: #ECECEC !important; box-shadow: none !important;
 }
-.dark .empty-state .suggestion,
-.dark .suggestion {
-  background: #182838 !important;
-  border-color: rgba(255,255,255,0.08) !important;
-  color: #DCE7F4 !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.25) !important;
+.dark .empty-state .suggestion:hover, .dark .suggestion:hover {
+  background: #1A1A1A !important; border-color: #3A3A3A !important;
 }
-.dark .empty-state .suggestion:hover,
-.dark .suggestion:hover {
-  border-color: rgba(111,168,220,0.4) !important;
-  background: #1B2E42 !important;
+.dark .composer-flyout, .dark .composer-wrap, .dark .composer-container {
+  background: #0E0E0E !important; border: 1px solid #1F1F1F !important;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.02), 0 12px 32px rgba(0,0,0,0.6) !important;
 }
-.dark .composer-flyout,
-.dark .composer-wrap,
-.dark .composer-container {
-  background: #182838 !important;
-  border-color: rgba(255,255,255,0.08) !important;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.35), 0 12px 32px rgba(0,0,0,0.25) !important;
+.dark .composer-input, .dark #composerInput, .dark #msg, .dark textarea[name="composer"] {
+  color: #ECECEC !important; background: transparent !important;
 }
-.dark .composer-input,
-.dark #composerInput,
-.dark textarea[name="composer"] {
-  color: #DCE7F4 !important;
+.dark .composer-input::placeholder, .dark #composerInput::placeholder, .dark #msg::placeholder { color: #6A6A6A !important; opacity: 1 !important; }
+.dark .icon-btn, .dark .composer-icon-btn { color: #BBBBBB !important; }
+.dark .icon-btn:hover { background: #1A1A1A !important; color: #FFFFFF !important; }
+.dark .send-btn, .dark #btnSend { background: var(--djara-gold) !important; color: #000 !important; }
+.dark .send-btn:hover, .dark #btnSend:hover { background: var(--djara-gold-warm) !important; }
+.dark .side-menu-item { color: #C0C0C0 !important; }
+.dark .side-menu-item:hover { background: #141414 !important; color: #FFFFFF !important; }
+.dark .side-menu-item.active { background: #1A1A1A !important; color: #FFFFFF !important; }
+.dark .rail-btn { color: #888 !important; }
+.dark .rail-btn:hover { background: #141414 !important; color: #DDDDDD !important; }
+.dark .rail-btn.active { background: #1A1A1A !important; color: var(--djara-gold) !important; }
+.dark input, .dark textarea, .dark select {
+  background: #0E0E0E !important; border-color: #2A2A2A !important; color: #ECECEC !important;
 }
-.dark .composer-input::placeholder,
-.dark #composerInput::placeholder,
-.dark textarea[name="composer"]::placeholder {
-  color: #6F8195 !important;
-  opacity: 1 !important;
-}
+.dark input:focus, .dark textarea:focus, .dark select:focus { border-color: var(--djara-aegean-soft) !important; outline: none !important; }
+.dark .help-wrap { color: #ECECEC; }
+.dark .help-wrap h1, .dark .help-wrap h2 { color: #FFFFFF; }
+.dark .help-wrap h2 { border-top-color: #1F1F1F; }
+.dark .help-wrap h3 { color: #DCDCDC; }
+.dark .help-wrap .help-lead { color: #9AA0A6; }
+.dark .help-wrap .help-card { background: #121212; border-color: rgba(245,197,66,0.25); border-left-color: var(--djara-gold-warm); color: #ECECEC; }
+.dark .help-wrap .help-card strong { color: var(--djara-gold-warm); }
+.dark .help-wrap .help-example { background: rgba(111,168,220,0.06); border-left-color: var(--djara-aegean-soft); color: #DDDDDD; }
+.dark .help-wrap kbd { background: #1A1A1A; border-color: #2A2A2A; color: #DCDCDC; }
+.dark .help-wrap strong { color: #FFFFFF; }
+.dark #panelHelp .side-help-toc a { color: #9AA0A6; }
+.dark #panelHelp .side-help-toc a:hover { background: #141414; color: #FFFFFF; }
+.dark #panelHelp .side-help-toc-title { color: #6A6A6A; }
+.dark .settings-pane, .dark .settings-field { background: #0E0E0E !important; border-color: #1F1F1F !important; color: #ECECEC !important; }
+.dark .settings-section-title { color: #FFFFFF !important; }
+.dark .settings-section-meta { color: #8A8A8A !important; }
+.dark .settings-action-btn { background: #141414 !important; border-color: #2A2A2A !important; color: #DDDDDD !important; }
+.dark .settings-action-btn:hover { background: #1A1A1A !important; border-color: #3A3A3A !important; }
 
-/* ============================================================
-   RESPONSIVE — main page should breathe at every width
-   ============================================================ */
+/* Responsive */
 @media (max-width: 980px) {
   .empty-state .empty-title { font-size: 26px !important; }
   .composer-flyout { max-width: none !important; width: calc(100% - 24px) !important; }
+  .help-wrap { padding: 24px 16px 60px; }
 }
 @media (max-width: 768px) {
   .empty-state { padding: 24px 12px !important; }
@@ -248,10 +226,13 @@ textarea[name="composer"]::placeholder {
   .empty-state .suggestion { font-size: 12.5px !important; padding: 10px 12px !important; }
   .composer-flyout { width: calc(100% - 16px) !important; border-radius: 14px !important; }
   .composer-pill { min-height: 60px !important; padding: 8px 10px !important; }
-  .composer-input, #composerInput { font-size: 14px !important; min-height: 40px !important; }
+  .composer-input, #composerInput, #msg { font-size: 14px !important; min-height: 40px !important; }
   .titlebar-title, .topbar-title { font-size: 12px !important; }
+  .help-wrap h1 { font-size: 26px; }
+  .help-wrap h2 { font-size: 19px; }
 }
 @media (max-width: 480px) {
   .empty-state .empty-title { font-size: 20px !important; }
   .composer-pill { min-height: 54px !important; }
+  .help-wrap { padding: 20px 12px 50px; }
 }

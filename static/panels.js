@@ -157,7 +157,7 @@ async function switchPanel(name, opts = {}) {
   // showing-<name> class on <main>; no class means chat (the default).
   const mainEl = document.querySelector('main.main');
   if (mainEl) {
-    ['settings','skills','memory','tasks','workspaces','profiles'].forEach(p => {
+    ['settings','skills','memory','tasks','workspaces','profiles','help'].forEach(p => {
       mainEl.classList.toggle('showing-' + p, nextPanel === p);
     });
   }
@@ -411,7 +411,8 @@ function _renderCronForm({ name, schedule, prompt, deliver, isEdit }){
         </div>
         <div class="detail-form-row">
           <label for="cronFormPrompt">${esc(t('cron_prompt_label') || 'Prompt')}</label>
-          <textarea id="cronFormPrompt" rows="6" placeholder="${esc(t('cron_prompt_placeholder') || 'Must be self-contained')}" required>${esc(prompt || '')}</textarea>
+          <textarea id="cronFormPrompt" rows="6" placeholder="${esc(t('cron_prompt_placeholder') || '')}" required>${esc(prompt || '')}</textarea>
+          <div class="detail-form-hint">${esc(t('cron_prompt_hint') || '')}</div>
         </div>
         <div class="detail-form-row">
           <label for="cronFormDeliver">${esc(t('cron_deliver_label') || 'Deliver output to')}</label>
@@ -420,15 +421,6 @@ function _renderCronForm({ name, schedule, prompt, deliver, isEdit }){
             ${deliverOpt('discord','Discord')}
             ${deliverOpt('telegram','Telegram')}
           </select>
-        </div>
-        <div class="detail-form-row">
-          <label for="cronFormSkillSearch">${esc(t('cron_skills_label') || 'Skills')}</label>
-          <div class="skill-picker-wrap">
-            <input type="text" id="cronFormSkillSearch" placeholder="${esc(t('cron_skills_placeholder') || 'Add skills (optional)...')}" autocomplete="off" ${isEdit ? 'disabled' : ''}>
-            <div id="cronFormSkillDropdown" class="skill-picker-dropdown" style="display:none"></div>
-            <div id="cronFormSkillTags" class="skill-picker-tags"></div>
-          </div>
-          ${isEdit ? `<div class="detail-form-hint">${esc(t('cron_skills_edit_hint') || 'Skill list is not editable after creation.')}</div>` : ''}
         </div>
         <div id="cronFormError" class="detail-form-error" style="display:none"></div>
       </form>
