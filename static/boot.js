@@ -778,7 +778,7 @@ function applyBotName(){
   const topbarTitle=$('topbarTitle');
   if(topbarTitle && (!S.session)) topbarTitle.textContent=name;
   const msg=$('msg');
-  if(msg) msg.placeholder='Message '+name+'\u2026';
+  if(msg){var _tpl=(typeof t==='function' && t('composer_placeholder'))||'Message {name}\u2026';msg.placeholder=_tpl.replace('{name}',name);}
 }
 
 (async()=>{
