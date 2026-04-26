@@ -1,12 +1,13 @@
 {
-  "name": "Hermes",
-  "short_name": "Hermes",
-  "description": "Hermes AI Agent Web UI",
+  "name": "Джара",
+  "short_name": "Джара",
+  "description": "Джара — ваш ИИ-помощник",
   "start_url": "./",
   "display": "standalone",
-  "background_color": "#1a1a1a",
-  "theme_color": "#1a1a1a",
+  "background_color": "#0D3B66",
+  "theme_color": "#1976D2",
   "orientation": "portrait-primary",
+  "lang": "ru",
   "icons": [
     {
       "src": "static/favicon.svg",

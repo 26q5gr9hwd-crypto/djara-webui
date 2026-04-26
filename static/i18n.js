@@ -3486,7 +3486,8 @@ function setLocale(lang) {
  * Server-persisted preference is applied later in loadSettingsPanel().
  */
 function loadLocale() {
-  setLocale(resolvePreferredLocale(null, localStorage.getItem('hermes-lang')));
+  // Djara: default to Russian when no preference is stored
+  setLocale(resolvePreferredLocale(null, localStorage.getItem('hermes-lang') || 'ru'));
 }
 
 /**
