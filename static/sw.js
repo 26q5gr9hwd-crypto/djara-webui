@@ -21,6 +21,7 @@ const SHELL_ASSETS = [
   './static/commands.js',
   './static/icons.js',
   './static/i18n.js',
+  './static/djara.css',
   './static/workspace.js',
   './static/onboarding.js',
   './static/favicon.svg',
