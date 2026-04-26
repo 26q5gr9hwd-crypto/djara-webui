@@ -5,6 +5,7 @@
 
 const LOCALES = {
   en: {
+      cron_intro: 'Scheduled tasks run automatically at the time you choose. Results are sent to Telegram by default.',
     _lang: 'en',
     _label: 'English',
     _speech: 'en-US',
@@ -630,7 +631,7 @@ const LOCALES = {
     cron_name_label: 'Name',
     cron_name_placeholder: 'Optional, e.g. "Daily summary"',
     cron_schedule_label: 'Schedule',
-    cron_schedule_hint: 'When to run. Examples: "every hour", "every day at 9am", "every Monday".',
+    cron_schedule_hint: 'Use English formulas: every 1h, every 30m, 0 9 * * *, @daily. Easier: ask the assistant in chat to set up the schedule.',
     cron_prompt_label: 'Request',
     cron_deliver_label: 'Where to send the result',
     cron_deliver_local: 'Local (save output only)',
@@ -655,6 +656,7 @@ const LOCALES = {
   },
 
   ru: {
+      cron_intro: 'Запланированные задания выполняются автоматически в выбранное время. Результат по умолчанию приходит в Telegram.',
     _lang: 'ru',
     _label: 'Русский',
     _speech: 'ru-RU',
@@ -1175,7 +1177,7 @@ const LOCALES = {
     cron_name_label: 'Название',
     cron_name_placeholder: 'По желанию, например «Сводка дня»',
     cron_schedule_label: 'Расписание',
-    cron_schedule_hint: 'Когда запускать. Примеры: «каждый час», «каждый день в 9 утра», «каждый понедельник».',
+    cron_schedule_hint: 'Используйте английские формулы: every 1h, every 30m, 0 9 * * *, @daily. Проще — попросите Китёнка в чате настроить расписание.',
     cron_prompt_label: 'Запрос',
     cron_deliver_label: 'Куда отправить результат',
     cron_deliver_local: 'Локально (только сохранение)',

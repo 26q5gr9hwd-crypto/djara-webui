@@ -236,7 +236,7 @@ function _renderCronDetail(job){
   const lastRun = job.last_run_at ? new Date(job.last_run_at).toLocaleString() : t('never');
   const schedule = job.schedule_display || (job.schedule && job.schedule.expression) || '';
   const skills = Array.isArray(job.skills) && job.skills.length ? job.skills.join(', ') : '—';
-  const deliver = job.deliver || 'local';
+  const deliver = job.deliver || 'telegram';
   const lastError = job.last_error ? `<div class="detail-row"><div class="detail-row-label">${esc(t('error_prefix').replace(/:\s*$/,''))}</div><div class="detail-row-value" style="color:var(--accent-text)">${esc(job.last_error)}</div></div>` : '';
   body.innerHTML = `
     <div class="main-view-content">
@@ -380,7 +380,7 @@ function openCronEdit(job){
     name: job.name || '',
     schedule: job.schedule_display || (job.schedule && job.schedule.expression) || '',
     prompt: job.prompt || '',
-    deliver: job.deliver || 'local',
+    deliver: job.deliver || 'telegram',
     isEdit: true,
   });
   if (!_cronSkillsCache) {
@@ -417,9 +417,9 @@ function _renderCronForm({ name, schedule, prompt, deliver, isEdit }){
         <div class="detail-form-row">
           <label for="cronFormDeliver">${esc(t('cron_deliver_label') || 'Deliver output to')}</label>
           <select id="cronFormDeliver" ${isEdit ? 'disabled' : ''}>
-            ${deliverOpt('local', t('cron_deliver_local') || 'Local (save output only)')}
-            ${deliverOpt('discord','Discord')}
             ${deliverOpt('telegram','Telegram')}
+            ${deliverOpt('discord','Discord')}
+            ${deliverOpt('local', t('cron_deliver_local') || 'Local (save output only)')}
           </select>
         </div>
         <div id="cronFormError" class="detail-form-error" style="display:none"></div>
@@ -2879,3 +2879,24 @@ function dismissErrorBanner(){
 }
 
 // Event wiring
+
+// v3d: help wiki page switcher
+(function(){
+  function switchHelpPage(key){
+    document.querySelectorAll('#mainHelp .help-page').forEach(function(p){
+      p.classList.toggle('active', p.getAttribute('data-help-page') === key);
+    });
+    document.querySelectorAll('#mainHelp .help-nav-item').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-help-page') === key);
+    });
+    var content = document.querySelector('#mainHelp .help-content');
+    if (content) content.scrollTop = 0;
+  }
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest && e.target.closest('#mainHelp .help-nav-item');
+    if (!btn) return;
+    e.preventDefault();
+    var key = btn.getAttribute('data-help-page');
+    if (key) switchHelpPage(key);
+  });
+})();

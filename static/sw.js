@@ -105,3 +105,12 @@ self.addEventListener('fetch', (event) => {
     })
   );
 });
+
+
+// v3d: never intercept favicons/manifest — let browser hit network directly
+self.addEventListener('fetch', function(event){
+  var u = (event.request && event.request.url) || '';
+  if (/(favicon|apple-touch-icon|manifest\.json)/.test(u)) {
+    event.respondWith(fetch(event.request, {credentials:'same-origin'}));
+  }
+}, {capture:true});

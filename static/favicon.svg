@@ -1,15 +1,10 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-label="Djara — omega">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
   <defs>
-    <linearGradient id="djara-bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#1F4E79"/>
-      <stop offset="100%" style="stop-color:#0D3B66"/>
-    </linearGradient>
-    <linearGradient id="djara-gold" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" style="stop-color:#F5C542"/>
-      <stop offset="100%" style="stop-color:#D49100"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0D3B66"/>
+      <stop offset="100%" stop-color="#061F36"/>
     </linearGradient>
   </defs>
-  <rect width="64" height="64" rx="12" fill="url(#djara-bg)"/>
-  <text x="32" y="46" text-anchor="middle" font-family="Georgia, Times, serif" font-size="42" font-weight="700" fill="url(#djara-gold)">Ω</text>
-  <path d="M10 56 L14 52 L18 56 L22 52 L26 56 L30 52 L34 56 L38 52 L42 56 L46 52 L50 56 L54 52" stroke="#F5C542" stroke-width="1.8" fill="none" opacity="0.7"/>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <text x="32" y="46" text-anchor="middle" font-family="Georgia, Times New Roman, serif" font-weight="700" font-size="42" fill="#F5C542">Д</text>
 </svg>
