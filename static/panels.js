@@ -365,7 +365,7 @@ function openCronCreate(){
   _editingCronId = null;
   _cronMode = 'create';
   _cronSelectedSkills = [];
-  _renderCronForm({ name:'', schedule:'', prompt:'', deliver:'local', isEdit:false });
+  _renderCronForm({ name:'', schedule:'', prompt:'', deliver:'telegram', isEdit:false });
   _cronSkillsCache = null;
   api('/api/skills').then(d=>{_cronSkillsCache=d.skills||[]; _bindCronSkillPicker();}).catch(()=>{});
 }
@@ -502,7 +502,7 @@ async function saveCronForm(){
   const name=(nameEl?nameEl.value:'').trim();
   const schedule=schEl.value.trim();
   const prompt=promptEl.value.trim();
-  const deliver=delivEl?delivEl.value:'local';
+  const deliver=delivEl?delivEl.value:'telegram';
   errEl.style.display='none';
   if(!schedule){errEl.textContent=t('cron_schedule_required_example');errEl.style.display='';return;}
   if(!prompt){errEl.textContent=t('cron_prompt_required');errEl.style.display='';return;}

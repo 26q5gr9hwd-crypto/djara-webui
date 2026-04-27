@@ -5,7 +5,7 @@
 
 const LOCALES = {
   en: {
-      cron_intro: 'Scheduled tasks run automatically at the time you choose. Results are sent to Telegram by default.',
+      cron_intro: 'Set up an automatic task. Output goes to Telegram by default. See the Guide → “Scheduled tasks” for details.',
     _lang: 'en',
     _label: 'English',
     _speech: 'en-US',
@@ -631,7 +631,7 @@ const LOCALES = {
     cron_name_label: 'Name',
     cron_name_placeholder: 'Optional, e.g. "Daily summary"',
     cron_schedule_label: 'Schedule',
-    cron_schedule_hint: 'Use English formulas: every 1h, every 30m, 0 9 * * *, @daily. Easier: ask the assistant in chat to set up the schedule.',
+    cron_schedule_hint: 'Use English formulas: every 1h, every 30m, 0 9 * * *, @daily. Easier — ask the assistant in chat to set up or fix the schedule.',
     cron_prompt_label: 'Request',
     cron_deliver_label: 'Where to send the result',
     cron_deliver_local: 'Local (save output only)',
@@ -650,13 +650,13 @@ const LOCALES = {
     profile_base_url_label: 'Base URL',
     profile_api_key_label: 'API key',
       composer_placeholder: 'Message {name}…',
-      tab_help: 'Help',
+      tab_help: 'Guide',
       help_toc_title: 'Contents',
       cron_prompt_hint: 'Describe what to do, in plain words — the same way you would ask the assistant in chat.',
   },
 
   ru: {
-      cron_intro: 'Запланированные задания выполняются автоматически в выбранное время. Результат по умолчанию приходит в Telegram.',
+      cron_intro: 'Настраиваем автоматическую задачу. Результат по умолчанию приходит в Telegram. Подробнее — в Руководстве, раздел «Запланированные задания».',
     _lang: 'ru',
     _label: 'Русский',
     _speech: 'ru-RU',
@@ -1177,7 +1177,7 @@ const LOCALES = {
     cron_name_label: 'Название',
     cron_name_placeholder: 'По желанию, например «Сводка дня»',
     cron_schedule_label: 'Расписание',
-    cron_schedule_hint: 'Используйте английские формулы: every 1h, every 30m, 0 9 * * *, @daily. Проще — попросите Китёнка в чате настроить расписание.',
+    cron_schedule_hint: 'Используйте английские формулы: every 1h, every 30m, 0 9 * * *, @daily. Проще — попросите Китёнка в чате настроить или поправить расписание.',
     cron_prompt_label: 'Запрос',
     cron_deliver_label: 'Куда отправить результат',
     cron_deliver_local: 'Локально (только сохранение)',
@@ -1246,7 +1246,7 @@ const LOCALES = {
     settings_tab_preferences: 'Параметры',
     settings_tab_system: 'Система',
       composer_placeholder: 'Сообщение {name}…',
-      tab_help: 'Помощь',
+      tab_help: 'Руководство',
       help_toc_title: 'Содержание',
       cron_prompt_hint: 'Опишите простыми словами, что Китёнок должен сделать — так же, как вы попросили бы его в чате.',
   },
