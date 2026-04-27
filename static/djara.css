@@ -315,8 +315,9 @@ html.dark #mainHelp .help-nav-item.active {
 #mainHelp .help-page { display: none; }
 #mainHelp .help-page.active { display: block; }
 #mainHelp .help-page h1 {
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 36px;
+  /* Match the rest of the UI font (system sans-serif) instead of a decorative serif. */
+  font-family: inherit;
+  font-size: 30px;
   font-weight: 600;
   margin: 0 0 12px;
   color: var(--hero, #1B2A3A);
