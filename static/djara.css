@@ -407,3 +407,8 @@ html.dark #mainHelp .help-page kbd {
   #mainHelp .help-content { padding: 18px 18px 40px; }
   #mainHelp .help-page h1 { font-size: 28px; }
 }
+
+/* v3f: hide sidebar when on help panel (it has its own internal nav) */
+main.main.showing-help { /* nothing here, just marker */ }
+body:has(main.main.showing-help) aside.sidebar { display: none !important; }
+body:has(main.main.showing-help) .resize-handle { display: none !important; }
