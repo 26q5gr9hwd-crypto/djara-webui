@@ -172,10 +172,16 @@ main.main.showing-help #composerWrap { display: none !important; }
 .dark .empty-state .suggestion:hover, .dark .suggestion:hover {
   background: #1A1A1A !important; border-color: #3A3A3A !important;
 }
-.dark .composer-flyout, .dark .composer-wrap, .dark .composer-container {
+.dark .composer-flyout, .dark .composer-container {
   background: #0E0E0E !important; border: 1px solid #1F1F1F !important;
   box-shadow: 0 1px 0 rgba(255,255,255,0.02), 0 12px 32px rgba(0,0,0,0.6) !important;
 }
+.dark .composer-wrap {
+  background: #0E0E0E !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.dark .composer-wrap::before { display: none !important; }
 .dark .composer-input, .dark #composerInput, .dark #msg, .dark textarea[name="composer"] {
   color: #ECECEC !important; background: transparent !important;
 }
@@ -447,3 +453,16 @@ html.dark #mainSettings .settings-pane.active .settings-field {
   background: transparent;
   border-color: #2A2A2A;
 }
+
+/* Friendly intro paragraph at the top of detail forms (e.g. Новое задание). */
+.detail-form-intro {
+  margin: 0 0 16px;
+  padding: 12px 14px;
+  border-radius: 10px;
+  background: rgba(13, 59, 102, 0.06);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.5;
+  max-width: 720px;
+}
+.dark .detail-form-intro { background: rgba(245, 197, 66, 0.06); color: #BFBFBF; }

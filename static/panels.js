@@ -399,6 +399,7 @@ function _renderCronForm({ name, schedule, prompt, deliver, isEdit }){
   const deliverOpt = (v,l) => `<option value="${v}"${deliver===v?' selected':''}>${esc(l)}</option>`;
   body.innerHTML = `
     <div class="main-view-content">
+      <p class="detail-form-intro">Здесь можно настроить автоматическую задачу, которую Китёнок будет выполнять по расписанию — например, каждое утро присылать сводку дня или напоминать о важных вещах. Подробнее — в Руководстве, раздел «Запланированные задания».</p>
       <form class="detail-form" onsubmit="event.preventDefault(); saveCronForm();">
         <div class="detail-form-row">
           <label for="cronFormName">${esc(t('cron_name_label') || 'Name')}</label>
