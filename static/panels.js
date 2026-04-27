@@ -2886,14 +2886,18 @@ function dismissErrorBanner(){
     document.querySelectorAll('#mainHelp .help-page').forEach(function(p){
       p.classList.toggle('active', p.getAttribute('data-help-page') === key);
     });
-    document.querySelectorAll('#mainHelp .help-nav-item').forEach(function(b){
-      b.classList.toggle('active', b.getAttribute('data-help-page') === key);
+    // v3g: nav items now live in the sidebar (#panelHelp .side-menu-item),
+    // but keep legacy #mainHelp selector for safety.
+    document.querySelectorAll('[data-help-page]').forEach(function(b){
+      if (b.tagName === 'BUTTON') {
+        b.classList.toggle('active', b.getAttribute('data-help-page') === key);
+      }
     });
     var content = document.querySelector('#mainHelp .help-content');
     if (content) content.scrollTop = 0;
   }
   document.addEventListener('click', function(e){
-    var btn = e.target.closest && e.target.closest('#mainHelp .help-nav-item');
+    var btn = e.target.closest && e.target.closest('button[data-help-page]');
     if (!btn) return;
     e.preventDefault();
     var key = btn.getAttribute('data-help-page');

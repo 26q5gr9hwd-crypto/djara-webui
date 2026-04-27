@@ -408,7 +408,17 @@ html.dark #mainHelp .help-page kbd {
   #mainHelp .help-page h1 { font-size: 28px; }
 }
 
-/* v3f: hide sidebar when on help panel (it has its own internal nav) */
-main.main.showing-help { /* nothing here, just marker */ }
-body:has(main.main.showing-help) aside.sidebar { display: none !important; }
-body:has(main.main.showing-help) .resize-handle { display: none !important; }
+
+/* v3g: help nav moved into sidebar (panelHelp). help-content takes full main width. */
+#mainHelp { overflow: hidden; }
+#mainHelp .help-content {
+  padding: 32px 48px;
+  overflow-y: auto;
+  max-width: 820px;
+  margin: 0 auto;
+  height: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 720px) {
+  #mainHelp .help-content { padding: 20px 18px; }
+}

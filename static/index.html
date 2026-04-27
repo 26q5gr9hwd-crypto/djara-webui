@@ -174,6 +174,23 @@
       </div>
       <div style="flex:1;overflow-y:auto;padding:8px" id="profilesPanel"><div style="color:var(--muted);font-size:12px" data-i18n="loading">Loading...</div></div>
     </div>
+    <!-- Help (Руководство) panel - mirrors other sidebars -->
+    <div class="panel-view" id="panelHelp">
+      <div class="panel-head">
+        <span data-i18n="tab_help">Руководство</span>
+      </div>
+      <div class="side-menu" id="helpSideMenu">
+        <button type="button" class="side-menu-item active" data-help-page="start">Начало</button>
+        <button type="button" class="side-menu-item" data-help-page="can">Что умеет Китёнок</button>
+        <button type="button" class="side-menu-item" data-help-page="how">Общение</button>
+        <button type="button" class="side-menu-item" data-help-page="cal">Запланированные задания</button>
+        <button type="button" class="side-menu-item" data-help-page="skills">Навыки</button>
+        <button type="button" class="side-menu-item" data-help-page="teach">Учим Китёнка</button>
+        <button type="button" class="side-menu-item" data-help-page="connect">Подключение сервисов</button>
+        <button type="button" class="side-menu-item" data-help-page="trouble">Если что-то не работает</button>
+        <button type="button" class="side-menu-item" data-help-page="tips">Подсказки</button>
+      </div>
+    </div>
     <!-- Settings panel (menu list; actual panes render in .main) -->
     
     <div class="panel-view" id="panelSettings">
@@ -519,20 +536,7 @@
     </div>
     
     <div id="mainHelp" class="main-view">
-      <div class="help-shell">
-        <nav class="help-nav">
-          <div class="help-nav-title">Разделы</div>
-          <button class="help-nav-item active" data-help-page="start">Начало</button>
-          <button class="help-nav-item" data-help-page="can">Что умеет Китёнок</button>
-          <button class="help-nav-item" data-help-page="how">Общение</button>
-          <button class="help-nav-item" data-help-page="cal">Запланированные задания</button>
-          <button class="help-nav-item" data-help-page="skills">Навыки</button>
-          <button class="help-nav-item" data-help-page="teach">Учим Китёнка</button>
-          <button class="help-nav-item" data-help-page="connect">Подключение сервисов</button>
-          <button class="help-nav-item" data-help-page="trouble">Если что-то не работает</button>
-          <button class="help-nav-item" data-help-page="tips">Подсказки</button>
-        </nav>
-        <div class="help-content">
+      <div class="help-content">
           <article class="help-page active" data-help-page="start">
             <h1>Китёнок — ваш помощник</h1>
             <p class="help-lead">Короткое руководство — без технических слов, без кода.</p>
@@ -658,15 +662,15 @@
             <ul>
               <li><strong>Работа с документами:</strong> Excel, Word, PowerPoint, PDF, OCR для скан-копий, редактирование PDF по описанию</li>
               <li><strong>Apple:</strong> Notes, Reminders, iMessage, Find My</li>
-              <li><strong>Почта:</strong> IMAP/SMTP через Himalaya</li>
+              <li><strong>Почта:</strong> IMAP/SMTP</li>
               <li><strong>Google Workspace:</strong> Drive, Docs, Sheets, Calendar</li>
               <li><strong>Заметки:</strong> Apple Notes, Obsidian</li>
               <li><strong>Карты и маршруты</strong></li>
               <li><strong>Музыка и видео:</strong> Spotify, YouTube, поиск GIF</li>
               <li><strong>Умный дом:</strong> Philips Hue (свет)</li>
-              <li><strong>Разработка:</strong> GitHub (задачи, PR, отладка)</li>
+              <li><strong>Сайты и небольшие приложения:</strong> может собрать простой сайт-визитку, лендинг, форму или мини-инструмент — описывайте на словах, что должно получиться, остальное Китёнок сделает сам</li>
               <li><strong>Исследования:</strong> научные статьи (arXiv), блоги, поиск по большим базам знаний</li>
-              <li><strong>Продуктивность:</strong> Linear, веб-подписки на изменения</li>
+              <li><strong>Дела и напоминания:</strong> вести список задач, следить за сроками, присылать уведомления, когда что-то меняется на нужном вам сайте</li>
             </ul>
             <h2>Как получить новый навык</h2>
             <p>Ничего не нужно искать. Просто скажите Китёнку:</p>
@@ -752,7 +756,7 @@
             <p>Иногда ответ обрывается на полуслове из-за длины. Просто напишите «продолжай» — Китёнок допишет с того места, где остановился.</p>
 
             <h2>Ничего не помогает</h2>
-            <p>Обновите страницу (потяните вниз на мобильном, или Cmd+Shift+R / Ctrl+Shift+F5 на компьютере). Если после этого Китёнок всё равно не отвечает — напишите Даниилу. Горячая линия работает.</p>
+            <p>Обновите страницу (потяните вниз на мобильном, или Cmd+Shift+R / Ctrl+Shift+F5 на компьютере). Если после этого Китёнок всё равно не отвечает — напишите Даниэлю. Горячая линия работает.</p>
           </article>
           <article class="help-page" data-help-page="tips">
             <h1>Подсказки</h1>
@@ -770,6 +774,8 @@
             <p>Одним сообщением можно поручить крупную задачу — Китёнок сам разобьёт её на шаги и выполнит от начала до конца. Объясняйте цель, а не инструкцию по шагам.</p>
             <div class="help-example">«Подготовь отчёт по продажам за квартал: объедини Excel, сделай сводную таблицу и презентацию»</div>
             <div class="help-example">«Организуй мои заметки по темам и сделай оглавление»</div>
+            <div class="help-example">«Сначала набросай план — какие шаги нужны для запуска моего сайта-визитки?»</div>
+            <p>Если задача большая — сначала попросите план. Так вы увидите, что Китёнок понял правильно, и сможете подкорректировать до начала работы.</p>
 
             <h2>Не бойтесь спрашивать</h2>
             <p>Если не знаете, как сформулировать — просто попросите Китёнка помочь. Он подскажет, как лучше сформулировать запрос или предложит варианты.</p>
