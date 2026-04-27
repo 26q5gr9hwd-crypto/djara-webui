@@ -422,3 +422,27 @@ html.dark #mainHelp .help-page kbd {
 @media (max-width: 720px) {
   #mainHelp .help-content { padding: 20px 18px; }
 }
+
+/* v3g hotfix2: Settings panes were bare (especially "Беседа" sub-pane which has
+   only section-head + action-grid and no .settings-field cards). Wrap each
+   active pane in a unified card. Inner .settings-field elements drop their
+   own background so they don't double-card. */
+#mainSettings .settings-pane.active {
+  background: var(--sidebar);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 16px;
+}
+html.dark #mainSettings .settings-pane.active {
+  background: #161616;
+  border-color: #262626;
+}
+#mainSettings .settings-pane.active .settings-field {
+  background: transparent;
+  border-color: var(--border);
+}
+html.dark #mainSettings .settings-pane.active .settings-field {
+  background: transparent;
+  border-color: #2A2A2A;
+}
