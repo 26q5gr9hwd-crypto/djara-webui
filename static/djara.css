@@ -131,6 +131,10 @@ main.main.showing-help #composerWrap { display: none !important; }
 .help-wrap .help-card strong { color: var(--djara-gold); }
 .help-wrap .help-example { background: rgba(31,78,121,0.05); border-left: 3px solid var(--djara-aegean); border-radius: 8px; padding: 10px 14px; margin: 8px 0; font-size: 14px; color: var(--djara-ink); font-style: italic; }
 .help-wrap kbd { display: inline-block; padding: 1px 6px; background: rgba(13,59,102,0.08); border: 1px solid rgba(13,59,102,0.12); border-radius: 4px; font-size: 12px; font-family: 'Inter', system-ui, sans-serif; color: var(--djara-ink); }
+.help-wrap .help-links { list-style: none; padding-left: 0; margin: 8px 0 18px; }
+.help-wrap .help-links li { margin-bottom: 14px; padding: 12px 14px; background: rgba(31,78,121,0.04); border: 1px solid rgba(13,59,102,0.08); border-radius: 8px; font-size: 14px; line-height: 1.5; }
+.help-wrap .help-links li a { color: var(--djara-aegean-deep); text-decoration: none; }
+.help-wrap .help-links li a:hover { text-decoration: underline; }
 #panelHelp .side-help-toc { padding: 12px 8px; }
 #panelHelp .side-help-toc a { display: block; padding: 8px 12px; font-size: 13px; color: var(--djara-ink-soft); text-decoration: none; border-radius: 8px; margin-bottom: 2px; }
 #panelHelp .side-help-toc a:hover { background: rgba(31,78,121,0.06); color: var(--djara-aegean-deep); }
@@ -209,6 +213,8 @@ main.main.showing-help #composerWrap { display: none !important; }
 .dark .help-wrap .help-card strong { color: var(--djara-gold-warm); }
 .dark .help-wrap .help-example { background: rgba(111,168,220,0.06); border-left-color: var(--djara-aegean-soft); color: #DDDDDD; }
 .dark .help-wrap kbd { background: #1A1A1A; border-color: #2A2A2A; color: #DCDCDC; }
+.dark .help-wrap .help-links li { background: rgba(111,168,220,0.05); border-color: #1F1F1F; }
+.dark .help-wrap .help-links li a { color: var(--djara-aegean-soft); }
 .dark .help-wrap strong { color: #FFFFFF; }
 .dark #panelHelp .side-help-toc a { color: #9AA0A6; }
 .dark #panelHelp .side-help-toc a:hover { background: #141414; color: #FFFFFF; }
