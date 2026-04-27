@@ -1245,7 +1245,7 @@ const LOCALES = {
     settings_tab_conversation: 'Беседа',
     settings_tab_preferences: 'Параметры',
     settings_tab_system: 'Система',
-      composer_placeholder: 'Привет, {name}',
+      composer_placeholder: 'Привет, {name}…',
       tab_help: 'Руководство',
       help_toc_title: 'Содержание',
       cron_prompt_hint: 'Опишите простыми словами, что Китёнок должен сделать — так же, как вы попросили бы его в чате.',
